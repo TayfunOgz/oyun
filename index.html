@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelime Tahmin Oyunu</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="game-container" id="startScreen">
+        <h1>Kelime Tahmin Oyunu</h1>
+        <label for="playerName">Oyuncu Adı:</label>
+        <input type="text" id="playerName" placeholder="Adınızı girin..." aria-label="Oyuncu adı girin" required>
+        <button onclick="startGame()">Başla</button>
+    </div>
+
+    <div class="game-container" id="gameScreen" style="display: none;">
+        <p id="hint" aria-live="polite"></p>
+        <input type="text" id="guessInput" placeholder="Tahmininizi yazın..." aria-label="Kelime tahmini girin">
+        <button onclick="checkGuess()">Tahmin Et</button>
+        <button onclick="passWord()">Pas Geç</button>
+        <button onclick="revealLetter()">Harf Aç</button>
+        <p id="generalTimer" aria-live="polite"></p>
+        <p id="score"></p>
+        <p id="result" aria-live="assertive"></p>
+        <button onclick="restartGame()" id="restartBtn">Oyunu Yeniden Başlat</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
